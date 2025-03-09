@@ -30,4 +30,9 @@ public class UserController {
         user.setId(0); // กำหนด id เป็น 0 เพื่อให้มันรู้ว่าต้อง save ใหม่เข้าไปในระบบ
         return userService.save(user);
     }
+
+    @GetMapping("/users")
+    public List<User> getAllUsers() {
+        return userService.findAll();
+    }
 }
